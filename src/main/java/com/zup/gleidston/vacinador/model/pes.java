@@ -3,14 +3,14 @@ package com.zup.gleidston.vacinador.model;
 import org.hibernate.validator.constraints.UniqueElements;
 import org.hibernate.validator.constraints.br.CPF;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.time.LocalDate;
 @Table
 @Entity
 public class pes  extends AbstractEntity{
+
+
     @UniqueElements
     private  String nome ;
     @Email
