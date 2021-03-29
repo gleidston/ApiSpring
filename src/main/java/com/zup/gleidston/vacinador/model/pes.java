@@ -8,6 +8,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.List;
+
 @Table
 @Entity
 public class pes  extends AbstractEntity{
@@ -20,19 +22,28 @@ public class pes  extends AbstractEntity{
 
 
      */
+
+
     @Column(name = "nome",nullable = false)
     @NotEmpty
     @Size(min = 3 ,message = "o nome precisa ter pelo menos  3 letras")
     private  String nome ;
+
     @Email
     @NotEmpty
+    @Column(name = "email",nullable = false, unique = true)
     private String email;
+
+    @Column(name = "cpf",nullable = false, unique = true)
     @CPF
     private String cpf;
 
     private String  datnasc ;
 
     private boolean estaVacinada;
+
+    @OneToMany
+    private List<Vacina> vacinas ;
 
     public String getNome() {
         return nome;
