@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.print.attribute.standard.MediaSize;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,7 +22,7 @@ public class PesController {
     }
 
     @PostMapping("id")
-    public pes cadastrar (@RequestBody pes pessoa ){
+    public pes cadastrar (@Valid @RequestBody pes pessoa ){
       return pesRepository.save(pessoa);
     }
     @PutMapping
