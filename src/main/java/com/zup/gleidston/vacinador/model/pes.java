@@ -33,7 +33,7 @@ public class pes  extends AbstractEntity{
     @NotEmpty
     @Column(name = "email",nullable = false, unique = true)
     private String email;
-
+    @NotEmpty
     @Column(name = "cpf",nullable = false, unique = true)
     @CPF
     private String cpf;

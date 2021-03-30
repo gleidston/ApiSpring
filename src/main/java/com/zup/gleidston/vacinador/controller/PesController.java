@@ -25,6 +25,8 @@ public class PesController {
     public pes cadastrar (@Valid @RequestBody pes pessoa ){
       return pesRepository.save(pessoa);
     }
+
+
     @PutMapping
     public ResponseEntity editar (@PathVariable("id")Integer id, @RequestBody pes pessoa ) {
         return pesRepository.findById(id).map(gravar-> {
